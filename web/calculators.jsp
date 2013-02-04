@@ -18,7 +18,7 @@
     <body>
         
         <div>
-            <h1 style="color: darkblue">Calculators!</h1>
+            <h1 style="color: darkblue">Calculators! First Challenge.</h1>
             <table height ="20%">
                 <tr>
                     <td></td>
@@ -84,8 +84,46 @@
                                 </tr>
                                 
                             </table>
-                            </form></td>
-                    <td></td>
+                            </form>
+                        </td>
+                        <td>
+                            <form name="areatriacalc" method="POST" action="calcc1.do?action=tria;hypo=+">
+                                <table class="tableCalcs">
+                                    <tr>
+                                        <th colspan="2" style="text-align: left;">Area: Right Triangle</th>
+                                    </tr>
+                                    
+                                    <tr>
+
+                                        <td colspan="2" class="resultArea">
+
+                                            <%
+                                                if(request.getAttribute("area")!=null && request.getAttribute("type")=="circ"){
+                                                    double area = (Double)request.getAttribute("area");
+                                                    out.print("<h3>" + area + "</h3>");
+                                                }
+
+                                            %>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><input type="text" name="s1" id="Side one" class="textDefault" value="Side One" onmouseover="cleartext(id)" onblur="readdtext(id)"></td>
+                                        <td><input type="text" name="s2" id="Side two" class="textDefault" value="Side Two" onmouseover="cleartext(id)" onblur="readdtext(id)">
+                                            <select id="sddm" onmouseover="dropdown(id)">
+                                                <option value="hypotenuse">Hypotenuse</option>
+                                                <option value="side">Side</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td colspan="2" style="text-align: center;"><input type="submit" value="Get Triangle Side" name="areacircsub"></td>
+                                    </tr>
+                                
+                                </table>
+                            </form>
+                        </td>
                 </tr>
             </table>
             
