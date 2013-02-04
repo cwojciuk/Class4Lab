@@ -1,0 +1,29 @@
+/* 
+    Document   : newcss
+    Created on : Jan 31, 2013, 1:30:29 PM
+    Author     : cwojciuk
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+td {
+    padding: 5px;
+}
+.tableCalcs {
+    border-style: solid;
+    border-width: 4px;
+    border-color: black;
+    padding: 10px;
+}
+.resultArea {
+    height: 40px;
+    text-align: center;
+    border-width: 3px;
+    border-style: solid;
+    border-color: darkolivegreen;
+    padding: 5px;
+    
+}
