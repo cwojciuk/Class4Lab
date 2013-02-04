@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package calculatorPackage;
+package calculatorPackageChallenge1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -62,6 +62,10 @@ static final double PI = 3.14159265359;
              area = length*width;
              type = "rect";
         }else if(action.equals("circ")){
+            double radius = Double.parseDouble(request.getParameter("radius"));
+            area = (PI*radius)*Math.exp(2);
+            type = "circ";
+        }else if(action.equals("tria")){
             double radius = Double.parseDouble(request.getParameter("radius"));
             area = (PI*radius)*Math.exp(2);
             type = "circ";
