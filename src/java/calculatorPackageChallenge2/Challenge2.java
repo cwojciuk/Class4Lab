@@ -70,10 +70,10 @@ public class Challenge2 extends HttpServlet {
         }else if(action.equals("tria")){
             
             if(request.getParameter( "dropdownside" ).equals( "h" )){
-                cs = new TriangleService( new Triangle( false, Double.parseDouble(request.getParameter( "s1" ) ), Double.parseDouble(request.getParameter( "s2" ) )) );
+                cs = new TriangleService( new Triangle( true, Double.parseDouble(request.getParameter( "s1" ) ), Double.parseDouble(request.getParameter( "s2" ) )) );
                 
             }else{
-                cs = new TriangleService( new Triangle( true, Double.parseDouble(request.getParameter( "s1" ) ), Double.parseDouble(request.getParameter( "s2" ) )) );
+                cs = new TriangleService( new Triangle( false, Double.parseDouble(request.getParameter( "s1" ) ), Double.parseDouble(request.getParameter( "s2" ) )) );
                 
             }
             type = "tria";
