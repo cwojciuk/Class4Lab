@@ -18,7 +18,7 @@
     <body>
         
         <div>
-            <h1 style="color: darkblue">Calculators! First Challenge.</h1>
+            <h1 style="color: darkblue">Calculators! Second Challenge.</h1>
             <table height ="20%">
                 <tr>
                     <td></td>
@@ -26,7 +26,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td><form name="arearectcalc" method="POST" action="calcc1.do?action=rect">
+                    <td><form name="arearectcalc" method="POST" action="calcc2.do?action=rect">
                             <table class="tableCalcs">
                                 <tr>
                                     <th colspan="2" style="text-align: left;">Area: Rectangle</th>
@@ -57,7 +57,7 @@
                             
                             
                         </form></td>
-                        <td><form name="areacirccalc" method="POST" action="calcc1.do?action=circ">
+                        <td><form name="areacirccalc" method="POST" action="calcc2.do?action=circ">
                                 <table class="tableCalcs">
                                 <tr>
                                     <th colspan="2" style="text-align: left;">Area: Circle</th>
@@ -87,7 +87,7 @@
                             </form>
                         </td>
                         <td>
-                            <form name="areatriacalc" method="POST" action="calcc1.do?action=tria">
+                            <form name="areatriacalc" method="POST" action="calcc2.do?action=tria">
                                 <table class="tableCalcs">
                                     <tr>
                                         <th colspan="2" style="text-align: left;">Area: Right Triangle</th>
@@ -129,6 +129,7 @@
             </table>
             
         </div>
+                                        <a href="calculators2.jsp">To the better site!</a>
     </body>
 </html>
 

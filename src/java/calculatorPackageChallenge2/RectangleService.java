@@ -8,6 +8,10 @@ package calculatorPackageChallenge2;
  * 
  * @author Chuck Wojciuk
  */
-public class RectangleService {
+public class RectangleService implements CalculateStrategy{
+    @Override
+    public double answer() {
+        throw new UnsupportedOperationException( "Not supported yet." );
+    }
     
 }
