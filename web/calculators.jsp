@@ -18,7 +18,7 @@
     <body>
         
         <div>
-            <h1 style="color: darkblue">Calculators! Second Challenge.</h1>
+            <h1 style="color: darkblue">Calculators! First Challenge.</h1>
             <table height ="20%">
                 <tr>
                     <td></td>
