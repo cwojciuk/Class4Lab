@@ -10,6 +10,4 @@ function readdtext(name){
         outtext.setAttribute("value", name.toString());
     }
 }
-function dropdown(name){
-    document.getElementById(name.toString()).focus() = true;
-}
+

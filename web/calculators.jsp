@@ -36,8 +36,8 @@
                                     <td colspan="2" class="resultArea">
                                         
                                         <%
-                                            if(request.getAttribute("area")!=null && request.getAttribute("type")=="rect"){
-                                                double area = (Double)request.getAttribute("area");
+                                            if(request.getAttribute("answer")!=null && request.getAttribute("type")=="rect"){
+                                                double area = (Double)request.getAttribute("answer");
                                                 
                                                 out.print("<h3>" + area + "</h3>");
                                             }
@@ -67,8 +67,8 @@
                                     <td colspan="2" class="resultArea">
                                         
                                         <%
-                                            if(request.getAttribute("area")!=null && request.getAttribute("type")=="circ"){
-                                                double area = (Double)request.getAttribute("area");
+                                            if(request.getAttribute("answer")!=null && request.getAttribute("type")=="circ"){
+                                                double area = (Double)request.getAttribute("answer");
                                                 out.print("<h3>" + area + "</h3>");
                                             }
                                             
@@ -87,7 +87,7 @@
                             </form>
                         </td>
                         <td>
-                            <form name="areatriacalc" method="POST" action="calcc1.do?action=tria;hypo=+">
+                            <form name="areatriacalc" method="POST" action="calcc1.do?action=tria">
                                 <table class="tableCalcs">
                                     <tr>
                                         <th colspan="2" style="text-align: left;">Area: Right Triangle</th>
@@ -98,9 +98,9 @@
                                         <td colspan="2" class="resultArea">
 
                                             <%
-                                                if(request.getAttribute("area")!=null && request.getAttribute("type")=="circ"){
-                                                    double area = (Double)request.getAttribute("area");
-                                                    out.print("<h3>" + area + "</h3>");
+                                                if(request.getAttribute("answer")!=null && request.getAttribute("type")=="tria"){
+                                                    double side = (Double)request.getAttribute("answer");
+                                                    out.print("<h3>" + side + "</h3>");
                                                 }
 
                                             %>
@@ -108,17 +108,18 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td><input type="text" name="s1" id="Side one" class="textDefault" value="Side One" onmouseover="cleartext(id)" onblur="readdtext(id)"></td>
-                                        <td><input type="text" name="s2" id="Side two" class="textDefault" value="Side Two" onmouseover="cleartext(id)" onblur="readdtext(id)">
-                                            <select id="sddm" onmouseover="dropdown(id)">
-                                                <option value="hypotenuse">Hypotenuse</option>
-                                                <option value="side">Side</option>
+                                        <td><input type="text" name="s1" id="Side A" value="Side A" onmouseover="cleartext(id)" onblur="readdtext(id)"></td>
+                                        <td style="border-width: 1px; border-style: solid; "><input type="text" name="s2" id="Side B or C" value="Side B or C" onmouseover="cleartext(id)" onblur="readdtext(id)">
+                                            
+                                            <select id="sddm" name="dropdownside">
+                                                <option value="h">Hypotenuse</option>
+                                                <option value="s">Side</option>
                                             </select>
                                         </td>
                                     </tr>
                                     
                                     <tr>
-                                        <td colspan="2" style="text-align: center;"><input type="submit" value="Get Triangle Side" name="areacircsub"></td>
+                                        <td colspan="2" style="text-align: center;"><input type="submit" value="Get Triangle Side" name="findsidesub"></td>
                                     </tr>
                                 
                                 </table>

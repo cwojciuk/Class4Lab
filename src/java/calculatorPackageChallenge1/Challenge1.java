@@ -51,7 +51,7 @@ static final double PI = 3.14159265359;
             throws ServletException, IOException {
         
         String action = request.getParameter("action");
-        double area = 0;
+        double answer = 0;
         String type = "";
         response.setContentType("text/html");
         
@@ -59,20 +59,25 @@ static final double PI = 3.14159265359;
              double length = Double.parseDouble(request.getParameter("length"));
              double width = Double.parseDouble(request.getParameter("width"));
         
-             area = length*width;
+             answer = length*width;
              type = "rect";
         }else if(action.equals("circ")){
             double radius = Double.parseDouble(request.getParameter("radius"));
-            area = (PI*radius)*Math.exp(2);
+            answer = (PI*Math.pow( radius, 2));
             type = "circ";
         }else if(action.equals("tria")){
-            double radius = Double.parseDouble(request.getParameter("radius"));
-            area = (PI*radius)*Math.exp(2);
-            type = "circ";
+            double side1 = Math.pow(Double.parseDouble(request.getParameter("s1")),2);
+            double side2 = Math.pow(Double.parseDouble(request.getParameter("s2")),2);
+            if(request.getParameter( "dropdownside" ).equals( "h" )){
+                answer = Math.sqrt((side2-side1));
+            }else{
+                answer = Math.sqrt((side1+side2));
+            }
+            type = "tria";
         }
        
         
-        request.setAttribute("area", area);
+        request.setAttribute("answer", answer);
         request.setAttribute("type", type);
         
         RequestDispatcher view = request.getRequestDispatcher(PAGE);
