@@ -24,7 +24,7 @@ public class Challenge2 extends HttpServlet {
 
 
     public static final String PAGE = "calculators.jsp";
-static final double PI = 3.14159265359;
+    private CalculateStrategy cs;
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -60,27 +60,26 @@ static final double PI = 3.14159265359;
         response.setContentType("text/html");
         
         if(action.equals( "rect" )){
-             double length = Double.parseDouble(request.getParameter("length"));
-             double width = Double.parseDouble(request.getParameter("width"));
-        
-             answer = length*width;
-             type = "rect";
+            cs = new RectangleAreaService(new Rectangle( Double.parseDouble(request.getParameter("length")), Double.parseDouble(request.getParameter("width")) ) );
+            ;
+            type = "rect";
         }else if(action.equals("circ")){
-            double radius = Double.parseDouble(request.getParameter("radius"));
-            answer = (PI*Math.pow( radius, 2));
+            cs = new CircleAreaService( new Circle( Double.parseDouble( request.getParameter( "radius") ) ) );
+            
             type = "circ";
         }else if(action.equals("tria")){
-            double side1 = Math.pow(Double.parseDouble(request.getParameter("s1")),2);
-            double side2 = Math.pow(Double.parseDouble(request.getParameter("s2")),2);
+            
             if(request.getParameter( "dropdownside" ).equals( "h" )){
-                answer = Math.sqrt((side2-side1));
+                cs = new TriangleService( new Triangle( false, Double.parseDouble(request.getParameter( "s1" ) ), Double.parseDouble(request.getParameter( "s2" ) )) );
+                
             }else{
-                answer = Math.sqrt((side1+side2));
+                cs = new TriangleService( new Triangle( true, Double.parseDouble(request.getParameter( "s1" ) ), Double.parseDouble(request.getParameter( "s2" ) )) );
+                
             }
             type = "tria";
         }
        
-        
+        answer = cs.answer();
         request.setAttribute("answer", answer);
         request.setAttribute("type", type);
         
